@@ -1,0 +1,26 @@
+ /* Encabezado*/ 
+.image{
+    width: 15%
+}
+
+.buscador{
+    width: 35%
+}
+
+.agregar{
+    width: 25%
+}
+
+.perfil{
+    width: 15%
+}
+
+
+.image_logo{
+    width: 150px
+}
+
+.encabezado{
+    display: flex;
+    align-items: ce;
+}
