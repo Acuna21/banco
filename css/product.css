@@ -2,25 +2,56 @@
 .image{
     width: 15%
 }
-
 .buscador{
     width: 35%
 }
-
 .agregar{
     width: 25%
 }
-
 .perfil{
     width: 15%
 }
-
-
 .image_logo{
     width: 150px
 }
 
+
 .encabezado{
     display: flex;
-    align-items: ce;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #626567;
+    background-color:#dc3545
+    
+}
+
+.contenido{
+    align-items: center;
+    justify-content: center;
+    padding-top: 6%;
+    justify-content: space-around;
+    background-color:#eeeeee;
+    padding-bottom: 10%
+
+}
+
+.imag_producto{
+    width: 500px;
+    height: 400px;
+    box-shadow:2px 1px 18px #dc3545
+
+}
+
+.formulario{
+    width: 600px;
+}
+
+.registrar{
+    text-align: center;
+    width: 300px
+}
+
+.grupo-formulario{
+    display: flex;
+    justify-content: space-around
 }

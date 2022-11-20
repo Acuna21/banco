@@ -39,9 +39,9 @@
 
         <!-- Buscador -->
         <div class="buscador">
-          <div class="input-group mb-3">
+          <div class="input-group">
             <button
-              class="btn btn-outline-secondary dropdown-toggle"
+              class="btn btn-secondary dropdown-toggle"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -59,110 +59,105 @@
               type="text"
               class="form-control"
               aria-label="Text input with dropdown button"
+              placeholder="Buscar productos"
             />
-            <button type="button" class="btn btn-outline-secondary">
+            <button type="button" class="btn btn-secondary">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>
         </div>
         <div class="d-grid gap-2 col-3 mx-auto agregar">
-          <button class="btn btn-primary" type="button">
+          <button class="btn btn-secondary" type="button">
             Agregar productos
           </button>
         </div>
-        <div class="perfil">
-          <div class="input-group mb-6">
-            <button type="button" class="btn btn-outline-secondary">
-              Sara
-            </button>
-            <button
-              type="button"
-              class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <span class="visually-hidden">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
-              <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-            </ul>
-          </div>
-        </div>
       </header>
-      <div>
-        <div>
-          <img
-            src="https://www.lacteoslatam.com/wp-content/uploads/2022/09/Estudio-de-la-transferencia-de-NaCl-en-el-queso-costeno-picado.jpg"
-            alt="Queso"
-          />
-        </div>
-        <div>
-          <form class="row g-3">
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="inputEmail4" />
+
+
+      <div class="contenido">
+
+        <form class="grupo-formulario">
+          
+          <!-- Image -->
+          <div>
+            <img class="imag_producto"
+              src="https://www.lacteoslatam.com/wp-content/uploads/2022/09/Estudio-de-la-transferencia-de-NaCl-en-el-queso-costeno-picado.jpg"
+              alt="Queso"
+            />
+            <div class="mb-3 mt-3">
+              <input class="form-control" type="file" id="formFile">
             </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Cantidad</label>
-              <input type="number" class="form-control" id="inputPassword4" />
-            </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label"
-                >Fecha de ingreso</label
-              >
-              <input
-                type="datetime-local"
-                class="form-control"
-                id="inputPassword4"
-              />
-            </div>
-            <div class="col-md-6">
-              <label for="inputState" class="form-label">Categoría</label>
-              <select id="inputState" class="form-select">
-                <option selected="">Frutas</option>
-                <option selected="">Proteínas</option>
-                <option selected="">Lácteos</option>
-                <option selected="">Granos</option>
-                <option selected="">Verduras</option>
-                <option selected="">Bebidas</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Peso</label>
-              <input type="number" class="form-control" id="inputEmail4" />
-            </div>
-            <div class="col-md-3">
-              <label for="inputState" class="form-label">Estado</label>
-              <select id="inputState" class="form-select">
-                <option selected="">Bueno</option>
-                <option selected="">Malo</option>
-              </select>
-            </div>
-            <div class="col-md-3">
-              <label for="inputState" class="form-label">Empresa donante</label>
-              <select id="inputState" class="form-select">
-                <option selected="">Coca cola</option>
-                <option selected="">Arana</option>
-                <option selected="">Alquería</option>
-              </select>
-            </div>
-            <div class="col-md-12">
-              <label for="exampleFormControlTextarea1" class="form-label"
-                >Descripcion</label
-              >
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
-              ></textarea>
-            </div>
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary">Registrar</button>
+          </div>
+  
+            <!-- Formulario -->
+            <div class="row g-3 formulario">
+              <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="inputEmail4" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Cantidad</label>
+                <input type="number" class="form-control" id="inputPassword4" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputPassword4" class="form-label"
+                  >Fecha de ingreso</label
+                >
+                <input
+                  type="datetime-local"
+                  class="form-control"
+                  id="inputPassword4"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="inputState" class="form-label">Categoría</label>
+                <select id="inputState" class="form-select">
+                  <option selected="">Frutas</option>
+                  <option selected="">Proteínas</option>
+                  <option selected="">Lácteos</option>
+                  <option selected="">Granos</option>
+                  <option selected="">Verduras</option>
+                  <option selected="">Bebidas</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Peso</label>
+                <input type="number" class="form-control" id="inputEmail4" />
+              </div>
+              <div class="col-md-3">
+                <label for="inputState" class="form-label">Estado</label>
+                <select id="inputState" class="form-select">
+                  <option selected="">Bueno</option>
+                  <option selected="">Malo</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <label for="inputState" class="form-label">Empresa donante</label>
+                <select id="inputState" class="form-select">
+                  <option selected="">Coca cola</option>
+                  <option selected="">Arana</option>
+                  <option selected="">Alquería</option>
+                </select>
+              </div>
+              <div class="col-md-12">
+                <label for="exampleFormControlTextarea1" class="form-label"
+                  >Descripcion</label
+                >
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="d-grid col-8 mx-auto registrar">
+                <button class="btn btn-danger" type="button">Registrar</button>
+              </div>
             </div>
           </form>
+  
+  
         </div>
-      </div>
-    </div>
+          </div>
+        </form>
   </body>
 </html>
