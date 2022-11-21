@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Tomar el mensaje -->
+<!-- {% with mensaje= get_flashed_messages()%}
+{% if mensaje %}
+{% for mensaje in mensaje %}
+    <p>{{mensaje}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %} -->
+
+<!-- Formulario -->
+<form method="POST">
+    <div>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" value="{{usuario.1}}">
+    </div>
+    <div>
+        <label for="lastname">Apellido</label>
+        <input type="text" name="lastname" value="{{usuario.2}}">
+    </div>
+    <input type="submit" value="Enviar" >
+</form>
+
+{% endblock %}

@@ -1,7 +1,44 @@
 {% extends "layout.html" %}
 
+{% block content %}
 <div class="container p-4">
-    {% block content %}
-    <button type="button" class="btn btn-primary">Bienvenido</button>
-    {% endblock %}
+  <!-- Tomar el mensaje -->
+  {% with mensaje= get_flashed_messages()%}
+  {% if mensaje %}
+  {% for mensaje in mensaje %}
+    <p>{{mensaje}}</p>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <button type="button" class="btn btn-primary">Bienvenido</button>
 </div>
+<table>
+  <thead>
+    <tr>
+      <td>
+        Id
+      </td>
+      <td>
+        Nombre
+      </td>
+      <td>
+        Apellido
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for usuario in usuarios %}
+    <tr>
+      <td>{{usuario.0}}</td>
+      <td>{{usuario.1}}</td>
+      <td>{{usuario.2}}</td>
+      <td>
+        <a href="/editar/{{usuario.0}}">Editar</a>
+        <a href="/eliminar/{{usuario.0}}">Eliminar</a>
+      </td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+{% endblock %}
