@@ -93,11 +93,11 @@
             <div class="row g-3 formulario">
               <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="inputEmail4" />
+                <input type="text" class="form-control" id="inputEmail4" name="nombre" />
               </div>
               <div class="col-md-6">
                 <label for="inputPassword4" class="form-label">Cantidad</label>
-                <input type="number" class="form-control" id="inputPassword4" />
+                <input type="number" class="form-control" id="inputPassword4" name="cantiddad" />
               </div>
               <div class="col-md-6">
                 <label for="inputPassword4" class="form-label"
@@ -107,36 +107,40 @@
                   type="datetime-local"
                   class="form-control"
                   id="inputPassword4"
+                  name="fechaIngreso"
                 />
               </div>
               <div class="col-md-6">
                 <label for="inputState" class="form-label">Categoría</label>
                 <select id="inputState" class="form-select">
-                  <option selected="">Frutas</option>
-                  <option selected="">Proteínas</option>
-                  <option selected="">Lácteos</option>
-                  <option selected="">Granos</option>
-                  <option selected="">Verduras</option>
-                  <option selected="">Bebidas</option>
+                  <option selected="true">--Seleccione--</option>
+                  <option value="fruta" >Frutas</option>
+                  <option value="proteinas" >Proteínas</option>
+                  <option value="lacteos" >Lácteos</option>
+                  <option value="granos" >Granos</option>
+                  <option value="verduras" >Verduras</option>
+                  <option value="bebidas" >Bebidas</option>
                 </select>
               </div>
               <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Peso</label>
-                <input type="number" class="form-control" id="inputEmail4" />
+                <input type="number" class="form-control" id="inputEmail4" name=peso/>
               </div>
               <div class="col-md-3">
                 <label for="inputState" class="form-label">Estado</label>
                 <select id="inputState" class="form-select">
-                  <option selected="">Bueno</option>
-                  <option selected="">Malo</option>
+                  <option selected="true">--Seleccione--</option>
+                  <option value="buenEstado">Bueno</option>
+                  <option value="malEstado">Defectuoso</option>
                 </select>
               </div>
               <div class="col-md-3">
                 <label for="inputState" class="form-label">Empresa donante</label>
                 <select id="inputState" class="form-select">
-                  <option selected="">Coca cola</option>
-                  <option selected="">Arana</option>
-                  <option selected="">Alquería</option>
+                  <option selected="true">--Seleccione--</option>
+                  <option value="cocaCola">Coca cola</option>
+                  <option value="arana">Arana</option>
+                  <option value="alqueria">Alquería</option>
                 </select>
               </div>
               <div class="col-md-12">
@@ -145,19 +149,17 @@
                 >
                 <textarea
                   class="form-control"
+                  name="descripcion"
                   id="exampleFormControlTextarea1"
                   rows="3"
                 ></textarea>
               </div>
               <div class="d-grid col-8 mx-auto registrar">
-                <button class="btn btn-danger" type="button">Registrar</button>
+                <input type="submit" class="btn btn-danger">Registrar</input>
               </div>
             </div>
           </form>
-  
-  
-        </div>
-          </div>
-        </form>
+      </div>
+    </div>
   </body>
 </html>
