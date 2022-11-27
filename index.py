@@ -44,8 +44,7 @@ def get_products():
 @app.route('/')
 def home():
     cur=mysql.connection.cursor()
-    cur.execute("""SELECT product_detailed.id, product.name, product.category,product_detailed.quantity, product_detailed.expiration,product_detailed.weight,product_detailed.state,product_detailed.description 
-    FROM product INNER JOIN product_detailed ON product.id=product_detailed.id_product;""")
+    cur.execute("""SELECT product_detailed.id, product.name, categories.name, product_detailed.quantity, product_detailed.expiration,product_detailed.weight,product_detailed.state,product_detailed.description FROM product INNER JOIN product_detailed ON product.id=product_detailed.id_product INNER JOIN categories ON categories.id=product.id_category;""")
     product_details=cur.fetchall()
     return render_template("home.html", details=product_details)
 
