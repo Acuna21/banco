@@ -1,3 +1,24 @@
 body{
-    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    /* background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
+    background-color:#f1f1f19b !important;
+}
+
+.contenido{
+    align-items: center;
+    justify-content: center;
+    padding-top: 8%;
+    justify-content: space-around;
+    padding-bottom: 50px
+}
+
+table{
+    width:90%;
+    box-shadow: 5px 5px 20px gray;
+    border-radius: 10px;
+}
+
+form.form-edit{
+    box-shadow: 5px 5px 20px gray;
+    border-radius: 10px;
+    padding: 30px;
 }

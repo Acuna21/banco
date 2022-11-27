@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
 <!-- Tomar el mensaje -->
 <!-- {% with mensaje= get_flashed_messages()%}
 {% if mensaje %}
@@ -12,16 +11,50 @@
 {% endwith %} -->
 
 <!-- Formulario -->
-<form method="POST">
-    <div>
-        <label for="name">Nombre</label>
-        <input type="text" name="name" value="{{usuario.1}}">
+    <div class="contenido" style="display: flex; justify-content: center; flex-direction: column;">
+        <h1>Editar Producto #{{editar.0}}</h1>
+        <form method="POST" class="row g-3 form-edit" style="width: 50%; margin-top: 10px;">
+            <div class="col-md-6">
+                <label class="form-label" for="cantidad">Cantidad</label>
+                <input class="form-control" type="number" id="cantidad" name="cantidad" value="{{editar.8}}">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="expiracion">Fecha de expiracion</label>
+                <input class="form-control" type="datetime-local" id="expiracion" name="expiracion" value="{{editar.4}}">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="peso">Peso (g)</label>
+                <input class="form-control" type="number" id="peso" name="peso" value="{{editar.7}}">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="estado">Estado</label>
+                <select name="estado" id="estado" class="form-select">
+                    {% if editar.3 == 0 %}
+                        <option value="0" selected>Malo</option>
+                        <option value="1">Bueno</option>
+                    {% else %}
+                        <option value="0">Malo</option>
+                        <option value="1" selected>Bueno</option>
+                    {% endif %}
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="donantes">Donante</label>
+                <select class="form-select" name="donante" id="donantes">
+                    {% for donante in donantes %}
+                        {% if editar.1 == donante.1 %}
+                            <option value="{{donante.1}}" selected>{{donante.0}}</option>
+                        {% else %}
+                            <option value="{{donante.1}}">{{donante.0}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-12">
+                <label class="form-label" for="descripcion">Descripcion</label>
+                <textarea class="form-control" type="text" id="descripcion" name="descripcion" value="{{editar.6}}"></textarea>
+            </div>
+            <input type="submit" class="btn btn-danger" value="Enviar" >
+        </form>
     </div>
-    <div>
-        <label for="lastname">Apellido</label>
-        <input type="text" name="lastname" value="{{usuario.2}}">
-    </div>
-    <input type="submit" value="Enviar" >
-</form>
-
 {% endblock %}

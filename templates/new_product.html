@@ -21,13 +21,16 @@
           <div class="col-md-6">
             <label for="categoria" class="form-label">Categoría</label>
             <select id="categoria" name="categoria" class="form-select">
-              <option selected="true" value="-1">--Seleccione--</option>
+              <option disabled selected="true" value="-1">--Seleccione--</option>
+              {% for categoria in categorias%}
+                <option value="{{categoria.1}}">{{categoria.0}}</option>
+              {% endfor %}
             </select>
           </div>
           <div class="col-md-6">
             <label for="product_id" class="form-label">Producto</label>
             <select id="product_id" name="product_id" class="form-select">
-              <option selected="true" value="-1">--Seleccione--</option>
+              <option disabled selected="true" value="-1">--Seleccione--</option>
             </select>
           </div>
           <div class="col-md-6">
@@ -46,13 +49,13 @@
             />
           </div>
           <div class="col-md-6">
-            <label for="peso" class="form-label">Peso</label>
+            <label for="peso" class="form-label">Peso en gramos</label>
             <input type="number" name="peso" class="form-control" id="peso" />
           </div>
           <div class="col-md-3">
             <label for="estado" class="form-label">Estado</label>
             <select id="estado" name="estado" class="form-select">
-              <option value="-1" selected>--Seleccione--</option>
+              <option disabled value="-1" selected>--Seleccione--</option>
               <option value="1">Bueno</option>
               <option value="0">Malo</option>
             </select>
@@ -60,10 +63,10 @@
           <div class="col-md-3">
             <label for="donante" class="form-label">Empresa donante</label>
             <select id="donante" name="donante" class="form-select">
-              <option value="-1" selected>--Seleccione--</option>
-              <option value="coca-cola">Coca cola</option>
-              <option value="arana">Arana</option>
-              <option value="alqueria">Alquería</option>
+              <option disabled value="-1" selected>--Seleccione--</option>
+              {% for donante in donantes%}
+                <option  value="{{donante.1}}">{{donante.0}}</option>
+              {% endfor %}
             </select>
           </div>
           <div class="col-md-12">
@@ -83,5 +86,6 @@
         </div>
       </form>
   </div>
+  <script src="./../static/js/products.js"></script>
 
 {% endblock %}
