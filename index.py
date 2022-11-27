@@ -1,12 +1,16 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, redirect,url_for,flash
 from flask_mysqldb import MySQL
 
+load_dotenv()
+
 app=Flask(__name__)
 # Conecion a mysql
-app.config["MYSQL_HOST"]="localhost"
-app.config["MYSQL_USER"]="root"
-app.config["MYSQL_PASSWORD"]="SaraAcuña123"
-app.config["MYSQL_DB"]="food_bank"
+app.config["MYSQL_HOST"]=os.getenv('DB_HOST')
+app.config["MYSQL_USER"]=os.getenv('DB_USER')
+app.config["MYSQL_PASSWORD"]=os.getenv('DB_PASSWORD')
+app.config["MYSQL_DB"]=os.getenv('DB_NAME')
 mysql=MySQL(app)
 
 def obtener_donantes():
@@ -38,7 +42,7 @@ def get_products():
     data=[]
     productos = obtener_productos()
     for producto in productos:
-        data.append({"category_id":producto[0],"product_id":producto[1],"product_name":producto[1]})
+        data.append({"category_id":producto[0],"product_id":producto[1],"product_name":producto[2]})
     return {"data":data}
 
 @app.route('/')

@@ -3,13 +3,13 @@
 {% block content %}
 <div class="contenido" >
     <h1 style="text-align: center; margin-bottom: 50px;" >Agregar Productos</h1>
-    <form class="grupo-formulario" method="POST">
+    <form class="grupo-formulario" id="new_product_form" method="POST">
 
         <!-- Formulario -->
         <div class="row g-3 formulario">
           <div class="col-md-6">
             <label for="categoria" class="form-label">Categoría</label>
-            <select id="categoria" name="categoria" class="form-select">
+            <select id="categoria" name="categoria" class="form-select" required>
               <option disabled selected="true" value="-1">--Seleccione--</option>
               {% for categoria in categorias%}
                 <option value="{{categoria.1}}">{{categoria.0}}</option>
@@ -18,13 +18,13 @@
           </div>
           <div class="col-md-6">
             <label for="product_id" class="form-label">Producto</label>
-            <select id="product_id" name="product_id" class="form-select">
+            <select id="product_id" name="product_id" class="form-select" required>
               <option disabled selected="true" value="-1">--Seleccione--</option>
             </select>
           </div>
           <div class="col-md-6">
             <label for="cantidad" class="form-label">Cantidad</label>
-            <input type="number" name="cantidad" class="form-control" id="cantidad" />
+            <input type="number" name="cantidad" class="form-control" id="cantidad" required/>
           </div>
           <div class="col-md-6">
             <label for="expiracion" class="form-label"
@@ -35,15 +35,17 @@
               name="expiracion"
               class="form-control"
               id="expiracion"
+              min="2022-11-28T11:55:55"
+              required
             />
           </div>
           <div class="col-md-6">
-            <label for="peso" class="form-label">Peso en gramos</label>
-            <input type="number" name="peso" class="form-control" id="peso" />
+            <label for="peso" id="label_peso" class="form-label">Gramos o Litros</label>
+            <input type="number" name="peso" class="form-control" id="peso" required/>
           </div>
           <div class="col-md-3">
             <label for="estado" class="form-label">Estado</label>
-            <select id="estado" name="estado" class="form-select">
+            <select id="estado" name="estado" class="form-select" required>
               <option disabled value="-1" selected>--Seleccione--</option>
               <option value="1">Bueno</option>
               <option value="0">Malo</option>
@@ -51,7 +53,7 @@
           </div>
           <div class="col-md-3">
             <label for="donante" class="form-label">Empresa donante</label>
-            <select id="donante" name="donante" class="form-select">
+            <select id="donante" name="donante" class="form-select" required>
               <option disabled value="-1" selected>--Seleccione--</option>
               {% for donante in donantes%}
                 <option  value="{{donante.1}}">{{donante.0}}</option>
@@ -67,10 +69,11 @@
               id="descripcion"
               name="descripcion"
               rows="3"
+              required
             ></textarea>
           </div>
           <div class="d-grid col-8 mx-auto registrar">
-            <input class="btn btn-danger" type="submit" value="Registrar">
+            <input class="btn btn-danger" type="submit" value="Registrar" id="newProductButton">
           </div>
         </div>
       </form>

@@ -44,7 +44,7 @@
 .grupo-formulario{
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 700px;
     padding: 50px 0;
     box-shadow: 5px 5px 18px gray;
     margin: 0 auto;
