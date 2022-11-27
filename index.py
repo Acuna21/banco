@@ -1,12 +1,16 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, redirect,url_for,flash
 from flask_mysqldb import MySQL
 
+load_dotenv()
+
 app=Flask(__name__)
 # Conecion a mysql
-app.config["MYSQL_HOST"]="localhost"
-app.config["MYSQL_USER"]="admin"
-app.config["MYSQL_PASSWORD"]="admin"
-app.config["MYSQL_DB"]="food_bank"
+app.config["MYSQL_HOST"]=os.getenv('DB_HOST')
+app.config["MYSQL_USER"]=os.getenv('DB_USER')
+app.config["MYSQL_PASSWORD"]=os.getenv('DB_PASSWORD')
+app.config["MYSQL_DB"]=os.getenv('DB_NAME')
 mysql=MySQL(app)
 
 def obtener_donantes():
