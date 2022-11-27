@@ -4,8 +4,8 @@ from flask_mysqldb import MySQL
 app=Flask(__name__)
 # Conecion a mysql
 app.config["MYSQL_HOST"]="localhost"
-app.config["MYSQL_USER"]="root"
-app.config["MYSQL_PASSWORD"]="SaraAcuña123"
+app.config["MYSQL_USER"]="admin"
+app.config["MYSQL_PASSWORD"]="admin"
 app.config["MYSQL_DB"]="food_bank"
 mysql=MySQL(app)
 
@@ -38,7 +38,7 @@ def get_products():
     data=[]
     productos = obtener_productos()
     for producto in productos:
-        data.append({"category_id":producto[0],"product_id":producto[1],"product_name":producto[1]})
+        data.append({"category_id":producto[0],"product_id":producto[1],"product_name":producto[2]})
     return {"data":data}
 
 @app.route('/')

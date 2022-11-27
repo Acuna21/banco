@@ -3,7 +3,7 @@
 {% block content %}
 <div class="contenido" >
     <h1 style="text-align: center; margin-bottom: 50px;" >Agregar Productos</h1>
-    <form class="grupo-formulario" method="POST">
+    <form class="grupo-formulario" id="new_product_form" method="POST">
 
         <!-- Formulario -->
         <div class="row g-3 formulario">
@@ -38,7 +38,7 @@
             />
           </div>
           <div class="col-md-6">
-            <label for="peso" class="form-label">Peso en gramos</label>
+            <label for="peso" id="label_peso" class="form-label">Gramos o Litros</label>
             <input type="number" name="peso" class="form-control" id="peso" />
           </div>
           <div class="col-md-3">
