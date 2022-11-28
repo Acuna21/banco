@@ -69,7 +69,8 @@ def new_product():
         flash("Dato guardado con éxito")
         return redirect(url_for("home"))
     if request.method=="GET":
-        return render_template("new_product.html")
+        categorias = obtener_categorias()
+        return render_template("new_product.html", categorias=categorias)
 
 
 @app.route('/eliminar/<string:id>')
