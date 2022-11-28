@@ -108,8 +108,12 @@ def editar(id):
         flash("Producto actualizado") 
         return redirect(url_for("home"))  
 
-@app.route('/new_donantes/<string:id>',methods=['GET','POST'])
-def new_donantes():
+if __name__=='__main__':
+    app.run(debug=True)
+
+"""
+#@app.route('/new_donantes/<string:id>',methods=['GET','POST'])
+#def new_donantes():
     if request.method=="POST":
         name=request.form["name"]
         address=request.form["address"]
@@ -125,9 +129,7 @@ def new_donantes():
     if request.method=="GET":
         return render_template("new_donantes.html")
     
-
-if __name__=='__main__':
-    app.run(debug=True)
+"""
 
 
 
