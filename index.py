@@ -88,6 +88,8 @@ def editar(id):
         cur=mysql.connection.cursor()
         cur.execute("SELECT*FROM product_detailed where id={0}".format(id))
         edit=cur.fetchall()
+        data = edit[0]
+        print(data[6])
         cur.close()
         donantes = obtener_donantes()
         return render_template("editar.html", editar=edit[0], donantes=donantes)
