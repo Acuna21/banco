@@ -70,7 +70,8 @@ def new_product():
         return redirect(url_for("home"))
     if request.method=="GET":
         categorias = obtener_categorias()
-        return render_template("new_product.html", categorias=categorias)
+        donantes=obtener_donantes()
+        return render_template("new_product.html", categorias=categorias, donantes=donantes)
 
 
 @app.route('/eliminar/<string:id>')
