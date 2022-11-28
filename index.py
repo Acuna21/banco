@@ -69,7 +69,8 @@ def new_product():
         flash("Dato guardado con éxito")
         return redirect(url_for("home"))
     if request.method=="GET":
-        return render_template("new_product.html")
+        categorias = obtener_categorias()
+        return render_template("new_product.html", categorias=categorias)
 
 
 @app.route('/eliminar/<string:id>')
@@ -87,6 +88,8 @@ def editar(id):
         cur=mysql.connection.cursor()
         cur.execute("SELECT*FROM product_detailed where id={0}".format(id))
         edit=cur.fetchall()
+        data = edit[0]
+        print(data[6])
         cur.close()
         donantes = obtener_donantes()
         return render_template("editar.html", editar=edit[0], donantes=donantes)
