@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="contenido" >
+    <h1 style="text-align: center; margin-bottom: 50px;" >Ingresar Donantes</h1>
+    <form class="grupo-formulario" method="POST">
+        <!-- Formulario -->
+        <div class="col-md-6">
+            <label for="name" class="form-label">Nombre: </label>
+            <input type="text" name="name" class="form-control" id="name" />
+          </div>
+           
+          <div class="col-md-6">
+            <label for="address" class="form-label">Dirección: </label>
+            <input type="text" name="address" class="form-control" id="address" />
+          </div>
+          
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email: </label>
+            <input type="email" name="email" class="form-control" id="email" />
+          </div>
+
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Telefono</label>
+            <input type="number" name="phone" class="form-control" id="phone" />
+          </div>
+
+
+          <div class="col-md-6">
+            <label for="last_donation" class="form-label"
+              >Fecha registro</label
+            >
+            <input
+              type="datetime-local"
+              name="last_donation"
+              class="form-control"
+              id="last_donation"
+            />
+          
+            <div class="d-grid col-8 mx-auto registrar">
+            <input class="btn btn-danger" type="submit" value="Registrar">
+          </div>
+        </div>
+      </form>
+  </div>
+{% endblock %}

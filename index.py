@@ -69,11 +69,7 @@ def new_product():
         flash("Dato guardado con éxito")
         return redirect(url_for("home"))
     if request.method=="GET":
-        donantes = obtener_donantes()
-        categorias= obtener_categorias()
-        my_list = list(categorias)
-        print(my_list)
-        return render_template("new_product.html",donantes=donantes,categorias=categorias)
+        return render_template("new_product.html")
 
 
 @app.route('/eliminar/<string:id>')
@@ -100,7 +96,7 @@ def editar(id):
         weight=request.form["peso"]
         state=request.form["estado"]
         id_donor=request.form["donante"]
-        description=request.form["descripcion"]  
+        description=request.form["descripcion"]
 
         cur=mysql.connection.cursor()
         cur.execute("""
@@ -111,6 +107,24 @@ def editar(id):
         mysql.connection.commit()
         flash("Producto actualizado") 
         return redirect(url_for("home"))  
+
+@app.route('/new_donantes/<string:id>',methods=['GET','POST'])
+def new_donantes():
+    if request.method=="POST":
+        name=request.form["name"]
+        address=request.form["address"]
+        phone=request.form["phone"]
+        last_donation=request.form["last_donation"]
+    
+        cur=mysql.connection.cursor()
+        cur.execute("INSERT INTO donor (name,address,phone,last_donation) VALUES (%s,%s,%s,%s)",(name,address,phone,last_donation))
+        mysql.connection.commit()
+        cur.close()
+        flash("Donante guardado con éxito")
+        return redirect(url_for("home"))
+    if request.method=="GET":
+        return render_template("new_donantes.html")
+    
 
 if __name__=='__main__':
     app.run(debug=True)

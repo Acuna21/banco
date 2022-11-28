@@ -28,7 +28,7 @@
             </div>
             <div class="col-md-6">
                 <label class="form-label" for="expiracion">Fecha de expiracion</label>
-                <input class="form-control" type="datetime-local" id="expiracion" name="expiracion" value="{{editar.4}}" min="2022-11-28T11:55:55" required>
+                <input class="form-control" type="datetime-local" id="expiracion" name="expiracion" value="{{editar.4}}" min="2022-11-28T00:00:00" required>
             </div>
             <div class="col-md-4">
                 <label class="form-label" for="cantidad">Cantidad</label>
@@ -52,7 +52,7 @@
             </div>
             <div class="col-md-12">
                 <label class="form-label" for="descripcion">Descripcion</label>
-                <textarea class="form-control" type="text" id="descripcion" name="descripcion" value="{{editar.6}}" required></textarea>
+                <textarea class="form-control" type="text" id="descripcion" name="descripcion" value="{{editar.6}}" maxlength="255" required> </textarea>
             </div>
             <input type="submit" class="btn btn-danger" value="Enviar" >
         </form>
